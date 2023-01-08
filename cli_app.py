@@ -14,6 +14,45 @@ init()
 print()
 print()
 
+def print_cli_table(df,context_name=None):
+    if df:
+        print(Fore.CYAN + 'visualizing ' + context_name + ' parse result ' + Style.RESET_ALL)
+        for i in df:
+            table = Table(title=i['table_name'])
+            columns = ["column_name", "column_type", "size", "foreign_key", "refers_to",
+                       "on_delete", "on_update", "unique", "nullable", "default", "check"]
+            data = list()
+            if i['columns']:
+                for j in i['columns']:
+                    refers_to, on_delete, on_update, is_foreign_key = None, None, None, None
+
+                    if j.get('references'):
+                        refers_to = str(j.get('references').get('table'))
+                    if j.get('on_delete'):
+                        on_delete = str(j.get('references').get('on_delete'))
+                    if j.get('on_update'):
+                        on_update = str(j.get('references').get('on_update'))
+                    if j.get('references'):
+                        is_foreign_key = 'yes'
+
+                    data.append([str(j.get('name')), str(j.get('type')), str(j.get('size')),
+                                 is_foreign_key, refers_to, on_delete, on_update,
+                                 str(j.get('unique')), str(j.get('nullable')), str(j.get('default')),
+                                 str(j.get('check'))])
+            else:
+                print(Fore.YELLOW + 'warning!! no column could be found in first sql' + Style.RESET_ALL)
+
+            for col in columns:
+                table.add_column(col)
+            for row in data:
+                table.add_row(*row, style='bright_green')
+
+            console = Console()
+            console.print(table)
+            print()
+    else:
+        print(Fore.RED + 'Error occurred while parsing ' + context_name + ' aborting ' + Style.RESET_ALL)
+
 f = pyfiglet.Figlet(font='big')
 print(Fore.CYAN + f.renderText('Compare DDL') + Style.RESET_ALL)
 sleep(0.5)
@@ -216,86 +255,38 @@ while True:
 
         print()
 
-        if first_file_parse_result:
-            print(Fore.CYAN + 'visualizing '+first_file+' parse result '+Style.RESET_ALL)
-            for i in first_file_parse_result:
-                table = Table(title=i['table_name'])
-                columns = ["column_name", "column_type", "size", "foreign_key","refers_to",
-                           "on_delete","on_update","unique","nullable","default","check"]
-                data = list()
-                if i['columns']:
-                    for j in i['columns']:
-                        refers_to, on_delete, on_update, is_foreign_key = None, None, None, None
-
-                        if j.get('references'):
-                            refers_to = str(j.get('references').get('table'))
-                        if j.get('on_delete'):
-                            on_delete = str(j.get('references').get('on_delete'))
-                        if j.get('on_update'):
-                            on_update = str(j.get('references').get('on_update'))
-                        if j.get('references'):
-                            is_foreign_key = 'yes'
-
-                        data.append([str(j.get('name')), str(j.get('type')), str(j.get('size')),
-                                     is_foreign_key, refers_to, on_delete, on_update,
-                                     str(j.get('unique')), str(j.get('nullable')), str(j.get('default')),
-                                     str(j.get('check'))])
-                else:
-                    print(Fore.YELLOW + 'warning!! no column could be found in first sql'+ Style.RESET_ALL)
-
-                for col in columns:
-                    table.add_column(col)
-                for row in data:
-                    table.add_row(*row,style='bright_green')
-
-                console = Console()
-                console.print(table)
-                print()
-        else:
-            print(Fore.RED + 'Error occurred while parsing '+first_file+ ' aborting '+Style.RESET_ALL)
-
+        print_cli_table(first_file_parse_result,'first_file_parse_result')
         print()
-
-        if second_file_parse_result:
-            print(Fore.CYAN + 'visualizing '+second_file+' parse result '+Style.RESET_ALL)
-            for i in second_file_parse_result:
-                table = Table(title=i['table_name'])
-                columns = ["column_name", "column_type", "size", "foreign_key","refers_to",
-                           "on_delete","on_update","unique","nullable","default","check"]
-                data = list()
-                if i['columns']:
-                    for j in i['columns']:
-                        refers_to, on_delete, on_update, is_foreign_key = None, None, None, None
-
-                        if j.get('references'):
-                            refers_to = str(j.get('references').get('table'))
-                        if j.get('on_delete'):
-                            on_delete = str(j.get('references').get('on_delete'))
-                        if j.get('on_update'):
-                            on_update = str(j.get('references').get('on_update'))
-                        if j.get('references'):
-                            is_foreign_key = 'yes'
-
-                        data.append([str(j.get('name')), str(j.get('type')), str(j.get('size')),
-                                     is_foreign_key, refers_to, on_delete, on_update,
-                                     str(j.get('unique')), str(j.get('nullable')), str(j.get('default')),
-                                     str(j.get('check'))])
-                else:
-                    print(Fore.YELLOW + 'warning!! no column could be found in first sql'+ Style.RESET_ALL)
-
-                for col in columns:
-                    table.add_column(col)
-                for row in data:
-                    table.add_row(*row, style='bright_green')
-
-                console = Console()
-                console.print(table)
-                print()
-        else:
-            print(Fore.RED + 'Error occurred while parsing '+second_file+ ' aborting '+Style.RESET_ALL)
+        print_cli_table(second_file_parse_result, 'second_file_parse_result')
+        print()
 
     else:
         first_sql_input = input(Fore.BLUE + 'Please enter your first sql '+Style.RESET_ALL)
         second_sql_input = input(Fore.BLUE + 'Please enter your second sql ' + Style.RESET_ALL)
 
         if first_sql_input is None or second_sql_input is None:
+            print(Fore.RED + 'Please provide both of the mandatory input'+Style.RESET_ALL)
+
+        print(Fore.CYAN + 'parsing first_sql_input '+ Style.RESET_ALL)
+        first_sql_parse_result = parse_from_file(first_sql_input)
+        print(Fore.CYAN + 'done!!' + Style.RESET_ALL)
+
+        print()
+
+        print(Fore.CYAN + 'parsing second_sql_input ' + Style.RESET_ALL)
+        second_sql_parse_result = parse_from_file(second_sql_input)
+        print(Fore.CYAN + 'done!!' + Style.RESET_ALL)
+
+        print()
+
+        print_cli_table(first_sql_parse_result, 'first_sql_parse_result')
+        print()
+        print_cli_table(second_sql_parse_result, 'second_sql_parse_result')
+        print()
+
+    choice = input(Fore.CYAN + '> Do you want to use the tool again ? N for No , press anything else for Yes '+Style.RESET_ALL)
+    if choice.upper() == 'N':
+        print(Fore.CYAN + 'Good Bye , have a good day\n'+ Style.RESET_ALL)
+        break
+    else:
+        continue

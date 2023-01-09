@@ -18,7 +18,7 @@ def print_cli_table(df,context_name=None):
     if df:
         print(Fore.CYAN + 'visualizing ' + context_name + ' parse result ' + Style.RESET_ALL)
         for i in df:
-            table = Table(title=i['table_name'])
+            table = Table(title='column details for '+i['table_name'])
             columns = ["column_name", "column_type", "size", "foreign_key", "refers_to",
                        "on_delete", "on_update", "unique", "nullable", "default", "check"]
             data = list()
@@ -48,8 +48,33 @@ def print_cli_table(df,context_name=None):
                 table.add_row(*row, style='bright_green')
 
             console = Console()
+            print(Fore.BLUE + '*****************************************************************************************'+Style.RESET_ALL)
             console.print(table)
             print()
+
+        for i in df :
+            table = Table(title='column details for ' + i['table_name'])
+            columns = ['table property name','property value']
+            data = [
+                ['index', str(i.get('index'))],
+                ['diststyle', str(i.get('diststyle'))],
+                ['distkey', str(i.get('distkey'))],
+                ['primary key', str(i.get('primary_key'))],
+                ['sort key', str(i.get('sortkey'))],
+                ['schema', str(i.get('schema'))],
+                ['table space', str(i.get('tablespace'))]
+            ]
+
+            for col in columns:
+                table.add_column(col)
+            for row in data:
+                table.add_row(*row, style='bright_green')
+
+            console = Console()
+            console.print(table)
+            print(Fore.BLUE +'*****************************************************************************************'+Style.RESET_ALL)
+            print()
+
     else:
         print(Fore.RED + 'Error occurred while parsing ' + context_name + ' aborting ' + Style.RESET_ALL)
 
@@ -181,7 +206,7 @@ else:
         profile = {name:name,favourite_db:favourite_db,
                    purpose:purpose,what_you_do:what_you_do,
                    default_outdir:default_outdir,cloud_platform:cloud_platform}
-        with open('profile.json','w') as fp:
+        with open('profile.json', 'w') as fp:
             json.dump(profile,fp)
         print(Fore.CYAN + 'profile has setup successfully \n'+ Style.RESET_ALL)
         break

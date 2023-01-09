@@ -1,0 +1,7 @@
+colorama==0.4.6
+commonmark==0.9.1
+ply==3.11
+pyfiglet==0.8.post1
+Pygments==2.14.0
+rich==13.0.1
+tqdm==4.64.1

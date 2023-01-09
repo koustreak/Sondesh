@@ -1,4 +1,4 @@
-from ddl_compare.utils import remove_par
+from ddl_parse.utils import remove_par
 
 
 class Snowflake:

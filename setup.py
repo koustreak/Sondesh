@@ -12,7 +12,7 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Package meta-data.
-NAME = 'ddl_compare'
+NAME = 'ddl_parse'
 DESCRIPTION = 'parse sql , compare two .sql file , generate optimization hint for your sql and various other utilities'
 URL = 'https://github.com/koustreak/dot.parser'
 EMAIL = 'dot.py@yahoo.com'

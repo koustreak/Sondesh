@@ -10,6 +10,7 @@ create table sales(
             commission decimal(8,2) encode delta32k,
             saletime timestamp without time zone encode az64,
             test_col varchar(100),
+            test_col2 string,
             primary key(salesid),
             foreign key(listid) references listing(listid),
             foreign key(sellerid) references users(userid),

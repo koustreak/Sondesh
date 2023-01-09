@@ -1,4 +1,4 @@
-import ddl_compare  # noqa: F401 weird issue with failed tests
+import ddl_parse  # noqa: F401 weird issue with failed tests
 
 
 class MSSQL:

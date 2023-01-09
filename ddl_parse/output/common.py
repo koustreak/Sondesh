@@ -4,7 +4,7 @@ import os
 from copy import deepcopy
 from typing import Dict, List, Tuple
 
-from ddl_compare.output import dialects as d
+from ddl_parse.output import dialects as d
 
 output_modes = [
     "mssql",
@@ -18,7 +18,7 @@ output_modes = [
 ]
 
 
-logger = logging.getLogger('ddl_compare')
+logger = logging.getLogger('ddl_parse')
 
 
 def get_table_from_tables_data(tables_dict: Dict, table_id: Tuple[str, str]) -> Dict:

@@ -13,7 +13,7 @@ based on user input . ddl_compare also suggest optimization hint .
 ### Dependencies
 
 * Windows 10 , Debian , BSD these are the supported platform 
-* Python version >= 3.8
+* Python version >=  3.8
 
 ### Installing
 

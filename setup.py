@@ -16,9 +16,9 @@ NAME = 'ddl_parse'
 DESCRIPTION = 'parse sql , compare two .sql file , generate optimization hint for your sql and various other utilities'
 URL = 'https://github.com/koustreak/dot.parser'
 EMAIL = 'dot.py@yahoo.com'
-AUTHOR = 'Koushik Dutta <a.k.a DotPY>'
+AUTHOR = 'Koushik Dutta'
 REQUIRES_PYTHON = '>=3.9.0'
-VERSION = '1.0.1'
+VERSION = '1.0'
 
 def parse_requirements(requirements):
     with open(requirements) as f:

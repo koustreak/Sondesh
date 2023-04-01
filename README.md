@@ -5,7 +5,7 @@
 [![Linux](https://svgshare.com/i/Zhy.svg)](https://svgshare.com/i/Zhy.svg)
 [![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-[![Generic badge](https://img.shields.io/badge/release-1.0.0-green.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/release-1.0-green.svg)](https://shields.io/)
 <br>
 ![logo.png](logo.png)
 

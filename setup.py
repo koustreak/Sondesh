@@ -25,7 +25,7 @@ def parse_requirements(requirements):
         return [l.strip('\n') for l in f if l.strip('\n') and not l.startswith('#')]
 
 # What packages are required for this module to be executed?
-REQUIRED = parse_requirements('requirements.txt')
+REQUIRED = parse_requirements('requirement.txt')
 
 
 # The rest you shouldn't have to touch too much :)
@@ -98,10 +98,13 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     author=AUTHOR,
+    entry_points = {
+        'console_scripts': ['sondesh=ddl_parse.apps.cli_app:main_app'],
+    },
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
-    packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*","test","test.*","*.test.*","*.test"]),
+    packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*","test","test.*","*.test.*","*.test","images","images.*"]),
     # If your package is a single module, use this instead of 'packages':
     # py_modules=['mypackage'],
 

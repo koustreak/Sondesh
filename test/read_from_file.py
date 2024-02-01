@@ -1,7 +1,5 @@
-import os
 import pprint
+from ddl_parse.ddl_parser import parse_from_file
 
-from ddl_parse import parse_from_file
-
-result = parse_from_file('test_sql.sql')
+result = parse_from_file('sql_files/one.sql')
 pprint.pprint(result)

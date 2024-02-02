@@ -31,7 +31,7 @@ Question is what it is parsing ?
 * ddl_compare can be installed using pip 
 
 ```
-pip install ddl-parse
+pip install sondesh
 ```
 
 ### Usage

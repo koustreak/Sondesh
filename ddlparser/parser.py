@@ -6,8 +6,8 @@ from typing import Dict, List, Optional, Tuple, Union
 
 from ply import lex, yacc
 
-from ddl_parse.output.common import dump_data_to_file, result_format
-from ddl_parse.utils import find_first_unpair_closed_par
+from ddlparser.output.common import dump_data_to_file, result_format
+from ddlparser.utils import find_first_unpair_closed_par
 
 # open comment
 OP_COM = "/*"

@@ -1,4 +1,4 @@
-import ddl_parse  # noqa: F401 weird issue with failed tests
+import ddlparser  # noqa: F401 weird issue with failed tests
 
 
 class MySQL:

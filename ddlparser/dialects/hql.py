@@ -1,4 +1,4 @@
-from ddl_parse.utils import check_spec, remove_par
+from ddlparser.utils import check_spec, remove_par
 
 
 class HQL:

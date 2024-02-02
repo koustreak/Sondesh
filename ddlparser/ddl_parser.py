@@ -2,17 +2,17 @@ from typing import Dict, List, Optional
 
 from ply.lex import LexToken
 
-from ddl_parse import tokens as tok
-from ddl_parse.dialects.bigquery import BigQuery
-from ddl_parse.dialects.hql import HQL
-from ddl_parse.dialects.mssql import MSSQL
-from ddl_parse.dialects.mysql import MySQL
-from ddl_parse.dialects.oracle import Oracle
-from ddl_parse.dialects.redshift import Redshift
-from ddl_parse.dialects.snowflake import Snowflake
-from ddl_parse.dialects.spark_sql import SparkSQL
-from ddl_parse.dialects.sql import BaseSQL
-from ddl_parse.parser import Parser
+from ddlparser import tokens as tok
+from ddlparser.dialects.bigquery import BigQuery
+from ddlparser.dialects.hql import HQL
+from ddlparser.dialects.mssql import MSSQL
+from ddlparser.dialects.mysql import MySQL
+from ddlparser.dialects.oracle import Oracle
+from ddlparser.dialects.redshift import Redshift
+from ddlparser.dialects.snowflake import Snowflake
+from ddlparser.dialects.spark_sql import SparkSQL
+from ddlparser.dialects.sql import BaseSQL
+from ddlparser.parser import Parser
 
 
 class parse_the_ddl_error(Exception):

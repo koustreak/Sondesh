@@ -1,6 +1,6 @@
 import pprint
 
-from ddl_parse.ddl_parser import parse_the_ddl
+from ddlparser.ddl_parser import parse_the_ddl
 
 def test_oracle_ddl():
 

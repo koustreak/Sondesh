@@ -3,7 +3,7 @@ from collections import defaultdict
 from copy import deepcopy
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ddl_parse.utils import check_spec, remove_par
+from ddlparser.utils import check_spec, remove_par
 
 auth = "AUTHORIZATION"
 

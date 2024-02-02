@@ -1,4 +1,4 @@
-from ddl_parse.utils import remove_par
+from ddlparser.utils import remove_par
 
 
 class Oracle:

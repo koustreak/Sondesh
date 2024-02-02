@@ -6,7 +6,7 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Generic badge](https://img.shields.io/badge/release-1.0-green.svg)](https://shields.io/)
 <br>
-![logo.png](images/logo.png)
+![logo.png](https://ibb.co/q1qpv5j)
 
 ## Description
 
@@ -14,7 +14,7 @@ Sondesh is the name of my cat . I love him very much
 so i've decided to name this project after him.
 
 This project is all about a parser and comparator . 
-Question is what is parse ? 
+Question is what it is parsing ? 
 - It parse SQL statements , but only DDL statements
 - It supports many sql dialects , example oracle , postgresql , sparksql , hive .. 
 - There is a cli app ( cli_app.py ), it compares two DDL statements and show you the differences in terminal
@@ -27,7 +27,7 @@ python cli_app.py
 - Then just follow the instruction in the terminal 
 - You either paste the raw sql or paste any absolute / relative path of sql file
 
-![compare_result.png](images/compare_result.png)
+![compare_result.png](https://ibb.co/pKRddz4)
 
 ### Dependencies
 
@@ -42,10 +42,10 @@ python cli_app.py
 pip install ddl-parse
 ```
 
-### Usage 
+### Usage
 
 ```python
-from ddl_parse import ddl_parser
+from ddlparser import ddl_parser
 import pprint
 
 result = ddl_parser.parse_from_file('/home/koushik/sample_ddl.sql')
@@ -58,7 +58,7 @@ Using the CLI APP .
 2. type sondesh
 3. VOALAA !!!!! 
 
-![logo_terminal.png](images/cli_app_terminal.png)
+![logo_terminal.png](https://ibb.co/zsfmN0L)
 
 ## What Next :
 

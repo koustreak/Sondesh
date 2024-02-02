@@ -104,7 +104,7 @@ def main_app():
     sleep(0.6)
     print(Fore.BLUE + '> docs : read the docs making is in progress ')
     sleep(0.6)
-    print(Fore.BLUE + '> unit test : check ddl_parse/tests ')
+    print(Fore.BLUE + '> unit test : check ddlparser/tests ')
     sleep(0.6)
     print(Fore.BLUE + '> powered by : Flex and YACC in python ')
     sleep(0.6)
@@ -117,7 +117,7 @@ def main_app():
         pbar.update(3)
         sleep(0.5)
         try:
-            from ddl_parse.dialects import redshift
+            from ddlparser.dialects import redshift
             pbar.update(10)
             pbar.set_description('Loading Redshift Dialect')
         except:
@@ -126,7 +126,7 @@ def main_app():
 
         try:
             sleep(0.5)
-            from ddl_parse.dialects import oracle
+            from ddlparser.dialects import oracle
             pbar.update(10)
             pbar.set_description('Loading Oracle Dialect')
         except:
@@ -135,7 +135,7 @@ def main_app():
 
         try:
             sleep(0.5)
-            from ddl_parse.dialects import spark_sql
+            from ddlparser.dialects import spark_sql
             pbar.update(12)
             pbar.set_description('Loading spark sql Dialect')
         except:
@@ -144,7 +144,7 @@ def main_app():
 
         try:
             sleep(0.5)
-            from ddl_parse.dialects import sql
+            from ddlparser.dialects import sql
             pbar.update(25)
             pbar.set_description('Loading ansi sql Dialect')
         except:
@@ -153,7 +153,7 @@ def main_app():
 
         try:
             sleep(0.5)
-            from ddl_parse.dialects import mysql
+            from ddlparser.dialects import mysql
             pbar.update(8)
             pbar.set_description('Loading mysql Dialect')
         except:
@@ -162,7 +162,7 @@ def main_app():
 
         try:
             sleep(0.5)
-            from ddl_parse.dialects import hql
+            from ddlparser.dialects import hql
             pbar.update(7)
             pbar.set_description('Loading HiveQL Dialect')
         except:
@@ -171,7 +171,7 @@ def main_app():
 
         try:
             sleep(0.5)
-            from ddl_parse.ddl_parser import parse_from_file
+            from ddlparser.ddl_parser import parse_from_file
             pbar.update(10)
             pbar.set_description('Loading SQL file parser')
         except:
@@ -180,7 +180,7 @@ def main_app():
 
         try:
             sleep(0.5)
-            from ddl_parse.ddl_parser import  parse_the_ddl
+            from ddlparser.ddl_parser import  parse_the_ddl
             pbar.update(7)
             pbar.set_description('Loading raw sql parser')
         except:
@@ -190,7 +190,7 @@ def main_app():
 
         try:
             sleep(0.5)
-            from ddl_parse import compare
+            from ddlparser import compare
             pbar.update(8)
             pbar.set_description('Loading comparator')
         except:

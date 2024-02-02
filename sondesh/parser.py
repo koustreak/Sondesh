@@ -6,8 +6,8 @@ from typing import Dict, List, Optional, Tuple, Union
 
 from ply import lex, yacc
 
-from ddlparser.output.common import dump_data_to_file, result_format
-from ddlparser.utils import find_first_unpair_closed_par
+from sondesh.output.common import dump_data_to_file, result_format
+from sondesh.utils import find_first_unpair_closed_par
 
 # open comment
 OP_COM = "/*"

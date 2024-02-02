@@ -4,7 +4,7 @@ import os
 from copy import deepcopy
 from typing import Dict, List, Tuple
 
-from ddlparser.output import dialects as d
+from sondesh.output import dialects as d
 
 output_modes = [
     "mssql",
@@ -18,7 +18,7 @@ output_modes = [
 ]
 
 
-logger = logging.getLogger('ddlparser')
+logger = logging.getLogger('sondesh')
 
 
 def get_table_from_tables_data(tables_dict: Dict, table_id: Tuple[str, str]) -> Dict:

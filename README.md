@@ -19,14 +19,6 @@ Question is what it is parsing ?
 - It supports many sql dialects , example oracle , postgresql , sparksql , hive .. 
 - There is a cli app ( cli_app.py ), it compares two DDL statements and show you the differences in terminal
 
-## How to use the cli app ? 
-
-```commandline
-python cli_app.py
-```
-- Then just follow the instruction in the terminal 
-- You either paste the raw sql or paste any absolute / relative path of sql file
-
 ![compare_result.png](https://i.ibb.co/94VWWTy/compare-result.png)
 
 ### Dependencies
@@ -45,7 +37,7 @@ pip install ddl-parse
 ### Usage
 
 ```python
-from ddlparser import ddl_parser
+from sondesh import ddl_parser
 import pprint
 
 result = ddl_parser.parse_from_file('/home/koushik/sample_ddl.sql')

@@ -1,4 +1,4 @@
-from ddlparser.utils import remove_par
+from sondesh.utils import remove_par
 
 
 class Snowflake:

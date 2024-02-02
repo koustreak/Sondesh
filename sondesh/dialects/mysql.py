@@ -1,4 +1,4 @@
-import ddlparser  # noqa: F401 weird issue with failed tests
+import sondesh  # noqa: F401 weird issue with failed tests
 
 
 class MySQL:

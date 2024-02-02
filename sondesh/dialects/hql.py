@@ -1,4 +1,4 @@
-from ddlparser.utils import check_spec, remove_par
+from sondesh.utils import check_spec, remove_par
 
 
 class HQL:

@@ -6,7 +6,7 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Generic badge](https://img.shields.io/badge/release-1.0-green.svg)](https://shields.io/)
 <br>
-![logo.png](https://ibb.co/q1qpv5j)
+![logo.png](https://i.ibb.co/x596NHL/logo.png)    
 
 ## Description
 
@@ -27,7 +27,7 @@ python cli_app.py
 - Then just follow the instruction in the terminal 
 - You either paste the raw sql or paste any absolute / relative path of sql file
 
-![compare_result.png](https://ibb.co/pKRddz4)
+![compare_result.png](https://i.ibb.co/94VWWTy/compare-result.png)
 
 ### Dependencies
 
@@ -58,7 +58,7 @@ Using the CLI APP .
 2. type sondesh
 3. VOALAA !!!!! 
 
-![logo_terminal.png](https://ibb.co/zsfmN0L)
+![logo_terminal.png](https://i.ibb.co/F67hnjf/cli-app-terminal.png)
 
 ## What Next :
 
